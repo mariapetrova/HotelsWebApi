@@ -1,0 +1,149 @@
+{
+    "id": "CHT",
+    "Name": "CoolHotelTravel",
+    "Currency": "EUR",
+    "Hotels": [
+        {
+            "Code": "SPRIN",
+            "HotelName": "Springfield Inn",
+            "LocalCategory": 3,
+            "City": "Springfield",
+            "NumberOfRooms": 234,
+            "GuestRooms": [
+                {
+                    "Room": "Double Room Standard",
+                    "PricePerNight": 100.0
+                },
+                {
+                    "Room": "Double Room Deluxe",
+                    "PricePerNight": 150.0
+                },
+                {
+                    "Room": "Junior Suite",
+                    "PricePerNight": 250.0
+                }
+            ]
+        },
+        {
+            "Code": "SPRPL",
+            "HotelName": "Springfield Plaza",
+            "LocalCategory": 5,
+            "City": "Springfield",
+            "NumberOfRooms": 147,
+            "GuestRooms": [
+                {
+                    "Room": "Double Room Standard",
+                    "PricePerNight": 120.0
+                },
+                {
+                    "Room": "Double Room Deluxe",
+                    "PricePerNight": 170.0
+                },
+                {
+                    "Room": "Junior Suite",
+                    "PricePerNight": 290.0
+                },
+                {
+                    "Room": "Suite",
+                    "PricePerNight": 350.0
+                }
+            ]
+        },
+        {
+            "Code": "SPRRE",
+            "HotelName": "Springfield Resort",
+            "LocalCategory": 4,
+            "City": "Springfield",
+            "NumberOfRooms": 345,
+            "GuestRooms": [
+                {
+                    "Room": "Single Room Standard",
+                    "PricePerNight": 80.5
+                },
+                {
+                    "Room": "Double Room Standard",
+                    "PricePerNight": 105.0
+                },
+                {
+                    "Room": "Double Room Deluxe",
+                    "PricePerNight": 165.0
+                },
+                {
+                    "Room": "Family Room",
+                    "PricePerNight": 195.0
+                }
+            ]
+        },
+        {
+            "Code": "SHEMO",
+            "HotelName": "Shelbyville Motors",
+            "LocalCategory": 3,
+            "City": "Shelbyville",
+            "NumberOfRooms": 227,
+            "GuestRooms": [
+                {
+                    "Room": "Double Room Standard",
+                    "PricePerNight": 90.0
+                },
+                {
+                    "Room": "Double Room Deluxe",
+                    "PricePerNight": 130.0
+                },
+                {
+                    "Room": "Junior Suite",
+                    "PricePerNight": 217.0
+                }
+            ]
+        },
+        {
+            "Code": "SHEPL",
+            "HotelName": "Shelbyville Plaza",
+            "LocalCategory": 4.5,
+            "City": "Shelbyville",
+            "NumberOfRooms": 84,
+            "GuestRooms": [
+                {
+                    "Room": "Double Room Standard",
+                    "PricePerNight": 115.0
+                },
+                {
+                    "Room": "Double Room Deluxe",
+                    "PricePerNight": 157.0
+                },
+                {
+                    "Room": "Junior Suite",
+                    "PricePerNight": 256.0
+                },
+                {
+                    "Room": "Suite",
+                    "PricePerNight": 349.0
+                }
+            ]
+        },
+        {
+            "Code": "SHERE",
+            "HotelName": "Shelbyville Resort",
+            "LocalCategory": 3,
+            "City": "Shelbyville",
+            "NumberOfRooms": 319,
+            "GuestRooms": [
+                {
+                    "Room": "Single Room Standard",
+                    "PricePerNight": 83.0
+                },
+                {
+                    "Room": "Double Room Standard",
+                    "PricePerNight": 107.0
+                },
+                {
+                    "Room": "Double Room Deluxe",
+                    "PricePerNight": 149.0
+                },
+                {
+                    "Room": "Family Room",
+                    "PricePerNight": 206.0
+                }
+            ]
+        },
+    ]
+}
