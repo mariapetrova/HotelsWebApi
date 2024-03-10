@@ -4,6 +4,6 @@ namespace Hotels.Api.Core.Repositories
 { 
     public interface IHotelRepository
     {
-        public List<Hotel> GetAllHotels();
+        public Task<List<Hotel>> GetAllHotelsAsync();
     }
 }

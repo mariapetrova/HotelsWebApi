@@ -12,20 +12,20 @@ namespace Hotels.Api.Core.Services
             _hotelRepository = repository;
         }
 
-        public List<GuestRoom> GetRoomsForHotel(string hotelCode)
+        public async Task<List<GuestRoom>> GetRoomsForHotelAsync(string hotelCode)
         {
-            var hotel = _hotelRepository.GetAllHotels()
-                .FirstOrDefault(h => h.Code.Equals(hotelCode, StringComparison.InvariantCultureIgnoreCase));
+            var hotel = (await _hotelRepository.GetAllHotelsAsync())
+                .FirstOrDefault(h => h.Code.Equals(hotelCode.Trim(), StringComparison.InvariantCultureIgnoreCase));
 
             return hotel?.GuestRooms ?? new List<GuestRoom>();
         }
 
-        public Hotel? GetCheapestHotel(string roomType)
+        public async Task<Hotel?> GetCheapestHotelAsync(string roomType)
         {
-            var hotels = _hotelRepository.GetAllHotels();
+            var hotels = await _hotelRepository.GetAllHotelsAsync();
 
             var cheapestHotel = hotels.SelectMany(h => h.GuestRooms
-                                        .Where(r => r.Room.Equals(roomType, StringComparison.InvariantCultureIgnoreCase))
+                                        .Where(r => r.Room.Equals(roomType.Trim(), StringComparison.InvariantCultureIgnoreCase))
                                         .Select(r => new { Hotel = h, Price = r.PricePerNight }))
                                         .OrderBy(r => r.Price)
                                         .FirstOrDefault();
@@ -33,10 +33,10 @@ namespace Hotels.Api.Core.Services
             return cheapestHotel?.Hotel;
         }
 
-        public List<Hotel> GetAllHotelsInCity(string city)
+        public async Task<List<Hotel>> GetAllHotelsInCityAsync(string city)
         {
-            return _hotelRepository.GetAllHotels()
-                .Where(h => h.City.Equals(city, StringComparison.InvariantCultureIgnoreCase))
+            return (await _hotelRepository.GetAllHotelsAsync())
+                .Where(h => h.City.Equals(city.Trim(), StringComparison.InvariantCultureIgnoreCase))
                 .OrderByDescending(h => h.LocalCategory)
                 .ToList();
         }

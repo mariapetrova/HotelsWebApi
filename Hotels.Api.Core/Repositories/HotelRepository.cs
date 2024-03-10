@@ -8,16 +8,21 @@ namespace Hotels.Api.Core.Repositories
     {
         private readonly IMemoryCache memoryCache;
         private const string CacheKey = "HotelData";
+        private readonly string _jsonFilePath;
 
         public HotelRepository(IMemoryCache memoryCache, string jsonFilePath)
         {
             this.memoryCache = memoryCache;
+            _jsonFilePath = jsonFilePath;
+        }
 
+        public async Task<List<Hotel>> GetAllHotelsAsync()
+        {
             if (!memoryCache.TryGetValue(CacheKey, out _))
             {
-                // Load your hotel data from the provided JSON @"./hoteldata.json"
-                using StreamReader reader = new(jsonFilePath);
-                var json = reader.ReadToEnd();
+                // Load your hotel data from the provided JSON
+                using StreamReader reader = new(_jsonFilePath);
+                string json = await reader.ReadToEndAsync();
 
                 var travelSite = JsonConvert.DeserializeObject<TravelSite>(json);
                 var hotels = travelSite?.Hotels.ToList();
@@ -28,10 +33,7 @@ namespace Hotels.Api.Core.Repositories
                     AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1)
                 });
             }
-        }
 
-        public List<Hotel> GetAllHotels()
-        {
             return memoryCache.Get<List<Hotel>>(CacheKey) ?? new List<Hotel>();
         }
     }

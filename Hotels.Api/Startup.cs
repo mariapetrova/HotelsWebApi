@@ -1,3 +1,4 @@
+using Hotels.Api.Core.Middleware;
 using Hotels.Api.Core.Repositories;
 using Hotels.Api.Core.Services;
 using Microsoft.Extensions.Caching.Memory;
@@ -62,6 +63,7 @@ namespace Hotels.Api
 
             app.UseAuthorization();
             app.UseCors();
+            app.UseMiddleware<GlobalExceptionMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

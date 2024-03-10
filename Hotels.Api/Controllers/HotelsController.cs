@@ -15,23 +15,23 @@ namespace Hotels.Api.Controllers
         }
 
         [HttpGet("AllRooms/{hotelCode}")]
-        public IActionResult GetRoomsForHotel(string hotelCode)
+        public async Task<IActionResult> GetRoomsForHotel(string hotelCode)
         {
-            var rooms = _hotelDataService.GetRoomsForHotel(hotelCode);
+            var rooms = await _hotelDataService.GetRoomsForHotelAsync(hotelCode);
             return Ok(rooms);
         }
 
         [HttpGet("CheapestHotel/{roomType}")]
-        public IActionResult GetCheapestHotel(string roomType)
+        public async Task<IActionResult> GetCheapestHotel(string roomType)
         {
-            var cheapestHotel = _hotelDataService.GetCheapestHotel(roomType);
+            var cheapestHotel = await _hotelDataService.GetCheapestHotelAsync(roomType);
             return Ok(cheapestHotel);
         }
 
         [HttpGet("AllHotelsInCity/{city}")]
-        public IActionResult GetAllHotelsInCity(string city)
+        public async Task<IActionResult> GetAllHotelsInCity(string city)
         {
-            var hotelsInCity = _hotelDataService.GetAllHotelsInCity(city);
+            var hotelsInCity = await _hotelDataService.GetAllHotelsInCityAsync(city);
             return Ok(hotelsInCity);
         }
     }

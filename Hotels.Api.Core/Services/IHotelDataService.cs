@@ -4,8 +4,8 @@ namespace Hotels.Api.Core.Services
 {
     public interface IHotelDataService
     {
-        List<GuestRoom> GetRoomsForHotel(string hotelCode);
-        Hotel? GetCheapestHotel(string roomType);
-        List<Hotel> GetAllHotelsInCity(string city);
+        Task<List<GuestRoom>> GetRoomsForHotelAsync(string hotelCode);
+        Task<Hotel?> GetCheapestHotelAsync(string roomType);
+        Task<List<Hotel>> GetAllHotelsInCityAsync(string city);
     }
 }
